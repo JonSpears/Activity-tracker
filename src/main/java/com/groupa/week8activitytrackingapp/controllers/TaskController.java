@@ -50,10 +50,10 @@ public class TaskController {
         } catch (Exception ex) {
             return "task_creation_error";
         }
-        return "task_creation_success";
+        return "redirect:/tasks";
     }
 
-    @GetMapping("/tasks/{title}")
+    @GetMapping("/tasks/search")
     public String findTask(@ModelAttribute("searchDto") SearchDto searchDto, Model model) {
         TaskDto task = new TaskDto();
         System.out.println(searchDto.toString());
@@ -86,7 +86,7 @@ public class TaskController {
     public String delete (@PathVariable(value = "id") long id) {
         taskService.deleteTask(id);
 
-        return "";
+        return "redirect:/tasks";
     }
 
 }
