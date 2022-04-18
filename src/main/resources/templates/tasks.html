@@ -323,7 +323,7 @@
           </div>
           <div class="left_container" >
             <form class="d-flex" th:action="@{/tasks/{title}}" method="get" th:object="${searchDto}">
-              <input class="form-control me-2" type="text" th:field="*{title}" placeholder="Search" aria-label="Search">
+              <input class="form-control me-2" type="text" name="searchDto" th:field="*{title}" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>
               <!--              <button>Search</button>-->
             </form>
@@ -365,7 +365,7 @@
               <a onclick="openEditModal()" id="fetcher" th:attr="data-id=${task.getId() + '~~' + task.getTitle() + '~~' + task.getDescription() + '~~' + task.getStatus()}"  th:href= "@{/tasks/edit/{id}(id=${task.id})}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
             </td>
             <td>
-              <a th:href= "@{/tasks/delete/{id}(id=${task.id})}" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+              <a th:href= "@{/tasks/delete/{id}(id=${task.id})}" >Delete</a>
             </td>
           </tr>
 

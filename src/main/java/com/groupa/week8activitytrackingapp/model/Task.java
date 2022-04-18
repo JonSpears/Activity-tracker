@@ -25,6 +25,7 @@ public class Task {
     private TaskStatus status;
     @CreationTimestamp
     private LocalDateTime createdAt;
+
     @UpdateTimestamp
     private LocalDateTime updatedAt;
     private LocalDate completedAt;

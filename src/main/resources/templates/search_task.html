@@ -283,7 +283,7 @@
             <h2> <b>Todo</b></h2>
           </div>
           <div class="left_container" >
-            <form class="d-flex" th:action="@{/tasks}" method="get">
+            <form class="d-flex" th:action="@{/tasks/search}" method="get">
               <input name="search" id="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>
               <!--              <button>Search</button>-->
@@ -319,8 +319,8 @@
 								<label for="checkbox1"></label>
 							</span>
             </td>
-            <td th:text="${searchFor.getTitle()}"></td>
-            <td th:text="${searchFor.getDescription()}"></td>
+            <td th:text="${searchFor.title}"></td>
+            <td th:text="${searchFor.description}"></td>
             <td th:text="${searchFor.createdAt}"></td>
             <td>
               <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
